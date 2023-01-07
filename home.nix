@@ -14,6 +14,7 @@ in
       glfw
     ];
 
+    #TODO investigate why it doesn't work (or does it)
     sessionVariables = {
       LV2_PATH = "/etc/profiles/per-user/${vars.userName}/lib/lv2";
     };

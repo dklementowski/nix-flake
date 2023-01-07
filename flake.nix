@@ -46,7 +46,7 @@
     in {
       nixosConfigurations = {
         BigPC = mkSystem inputs.nixpkgs "BigPC";
-        ThinkPad = mkSystem inputs.nixpkgs "ThinkPad";
+        ThiccPad = mkSystem inputs.nixpkgs "ThiccPad";
       };
     };
 }
