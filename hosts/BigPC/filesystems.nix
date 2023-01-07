@@ -24,12 +24,16 @@ in {
       options = [ "subvol=@nix" ];
     };
 
-    #TODO @var
-
-    "/home" = {
+    "/nix" = {
       device = "/dev/disk/by-uuid/${rootUUID}";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "subvol=@nix" ];
+    };
+
+    "/var" = {
+      device = "/dev/disk/by-uuid/${rootUUID}";
+      fsType = "btrfs";
+      options = [ "subvol=@var" ];
     };
 
     "/boot/efi" = {
