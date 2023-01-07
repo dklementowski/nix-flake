@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -20,13 +20,16 @@
       vars = import ./vars.nix;
       mkSystem = pkgs: hostname:
         pkgs.lib.nixosSystem {
-          inherit system
+          inherit system;
           modules = [
-            { netowrking.hostName = hostname; }
+            { networking.hostName = hostname; }
 
             ./modules/system
+            ./modules/shell
             ./modules/audio
+            ./modules/desktop
             ./modules/gaming
+            ./modules/ops
             ./configuration.nix
             ./hosts/${hostname}
 
@@ -34,7 +37,9 @@
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
               home-manager.users.${vars.userName} = {
-                imports = [ ./home.nix ];
+                imports = [
+                  ./home.nix
+                ];
               };
             }
           ];

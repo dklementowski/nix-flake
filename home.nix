@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-vars = import ./vars.nix;
+  vars = import ./vars.nix;
 in
 {
   home = {

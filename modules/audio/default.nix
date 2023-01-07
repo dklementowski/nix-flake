@@ -3,6 +3,10 @@
 let
   vars = ../../vars.nix;
 in {
+  imports = [
+    ./tools.nix
+  ];
+
   sound.enable = true;
   hardware.pulseaudio.enable = false;
 
