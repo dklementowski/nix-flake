@@ -43,7 +43,7 @@
         blkDev = "/dev/disk/by-uuid/e321cc57-8b4c-425a-97ba-4547a005713d";
         enable = true;
         label = "backup";
-	keyFile = "/mnt-root/root/.backup-key";
+        keyFile = "/mnt-root/root/.backup-key";
       };
     };
 

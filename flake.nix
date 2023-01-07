@@ -18,12 +18,18 @@
       };
       lib = nixpkgs.lib;
       vars = import ./vars.nix;
-    in {
-      nixosConfigurations = {
-        hello = lib.nixosSystem {
-          inherit system;
+      mkSystem = pkgs: hostname:
+        pkgs.lib.nixosSystem {
+          inherit system
           modules = [
+            { netowrking.hostName = hostname; }
+
+            ./modules/system
+            ./modules/audio
+            ./modules/gaming
             ./configuration.nix
+            ./hosts/${hostname}
+
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
@@ -33,6 +39,10 @@
             }
           ];
         };
+    in {
+      nixosConfigurations = {
+        BigPC = mkSystem inputs.nixpkgs "BigPC";
+        ThinkPad = mkSystem inputs.nixpkgs "ThinkPad";
       };
     };
 }
