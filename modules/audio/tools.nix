@@ -1,15 +1,13 @@
 { config, pkgs, ... }:
 
-{
-  environment.systemPackages = with pkgs; [
+let
+  vars = import ../../vars.nix;
+in {
+  users.users.${vars.userName}.packages = with pkgs; [
     ardour
     tenacity
     klick
     qpwgraph
-
-    yabridge
-    yabridgectl
-    wine
 
     # Audio plugins (LV2, VST2, VST3)
     distrho
@@ -20,5 +18,10 @@
     x42-gmsynth
     dragonfly-reverb
     guitarix
+
+    # Support for Windows VST2/VST3 plugins
+    yabridge
+    yabridgectl
+    wine
   ];
 }

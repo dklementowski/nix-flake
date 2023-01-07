@@ -49,6 +49,8 @@ in {
     };
 
     "/mnt/sandisk" = {
+      # TODO change to /mnt/games.
+      # I don't like the name, but it's hardcoded in so many places at this point :/
       device = "/dev/disk/by-uuid/${gamesUUID}";
       fsType = "btrfs";
     };

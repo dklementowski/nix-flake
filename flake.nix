@@ -30,7 +30,6 @@
             ./modules/desktop
             ./modules/gaming
             ./modules/ops
-            ./configuration.nix
             ./hosts/${hostname}
 
             home-manager.nixosModules.home-manager {

@@ -16,10 +16,20 @@ in {
   boot.extraModulePackages = with config.boot.kernelPackages; [ it87 v4l2loopback ];
 
   # For some reason the TV's default resolution is 1920x1080 and the TV's built-in upscaler is a joke.
-  # Let's avoid that ugly thing whenever possible.
+  # Avoid that ugly thing whenever possible.
   boot.kernelParams = [
     "video=HDMI-A-1:3840x2160@60"
   ];
 
   hardware.bluetooth.enable = true;
+
+  # Hardware specific packages like AMD GPU utils, hw video accel drivers etc.
+  environment.systemPackages = with pkgs; [
+    libva-utils
+    libva-minimal
+    vaapiVdpau
+    radeontop
+    radeontools
+    corectrl
+  ];
 }

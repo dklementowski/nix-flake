@@ -1,15 +1,17 @@
 { config, pkgs, ... }:
 
-{
-  environment.systemPackages = with pkgs; [
-      vagrant
-      tfswitch
-      packer
-      ansible
-      virt-manager
-      podman-compose
-      pods
-      k9s
+let
+  vars = import ../../vars.nix;
+in {
+  users.users.${vars.userName}.packages = with pkgs; [
+    vagrant
+    tfswitch
+    packer
+    ansible
+    virt-manager
+    podman-compose
+    pods
+    k9s
   ];
 
   virtualisation = {

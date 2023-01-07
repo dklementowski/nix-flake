@@ -41,8 +41,16 @@ in
     # Use GNOME's cursor to overcome this bug: https://gitlab.freedesktop.org/drm/amd/-/issues/1513
     # Forcing software curosr fixes how it looks, but introduces other glitches.
     gnome.adwaita-icon-theme
+
+    # Fancy terminal font
+    nerdfonts
+    fira-code-symbols
   ];
 
-  # Enable KDE Connect
-  programs.kdeconnect.enable = true;
+  programs = {
+    kdeconnect.enable = true;
+
+    # Workaround for badly themed GTK apps on Wayland
+    dconf.enable = true;
+  };
 }

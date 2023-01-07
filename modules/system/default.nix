@@ -5,7 +5,8 @@ let
 in
 {
   imports = [
-    ./virtualization.nix
+    ./users.nix
+    ./extras.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_0;
@@ -30,9 +31,6 @@ in
 
   # Use NetworkManager for network management
   networking.networkmanager.enable = true;
-
-  # Additional system packages
-  environment.systemPackages = with pkgs; [ nix-shell ];
 
   # Basic distro settings
   # Note: don't update the stateVersion variable when switching to newer version

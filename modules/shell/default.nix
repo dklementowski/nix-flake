@@ -16,16 +16,16 @@ in {
 
     systemPackages = with pkgs; [
       killall
+      tree
+      ripgrep
+      wl-clipboard
+
       wget
       curl
-      git
-      wl-clipboard
-      tree
-      ncdu
+
       neofetch # Karma farming utility xD
-      nerdfonts
-      fira-code-symbols
-      ripgrep
+      ncdu
+      git
     ];
   };
 
@@ -95,6 +95,11 @@ in {
           opt = [ ];
         };
       };
+    };
+
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
   };
 }
