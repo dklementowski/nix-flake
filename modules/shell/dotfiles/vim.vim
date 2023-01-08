@@ -173,3 +173,13 @@ nnoremap <C-l> <C-w>l
 " Color scheme
 set background=dark
 colorscheme PaperColor
+
+" Gitsigns
+lua <<EOF
+require('gitsigns').setup({
+  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+});
+EOF
