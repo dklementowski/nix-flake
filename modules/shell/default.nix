@@ -23,9 +23,10 @@ in {
       wget
       curl
 
-      neofetch # Karma farming utility xD
-      ncdu
       git
+      ncdu
+      btop
+      neofetch
     ];
   };
 

@@ -32,6 +32,10 @@ in {
     kdenlive
   ];
 
+  programs = {
+    partition-manager.enable = true;
+  };
+
   # Just for fun, an Android container ;-)
   virtualisation = {
     waydroid.enable = true;
