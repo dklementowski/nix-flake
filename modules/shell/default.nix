@@ -25,7 +25,6 @@ in {
       btop
       neofetch
       unzip
-      nodejs-18_x
     ];
   };
 
@@ -53,11 +52,9 @@ in {
       viAlias = true;
       defaultEditor = true;
       withPython3 = true;
-      withNodeJs = true;
       configure = {
         customRC = ''
           luafile ${./dotfiles/nvim/init.lua }
-          luafile ${./dotfiles/nvim/coc.lua }
         '';
 
         packages.plugins = with pkgs.vimPlugins; {
