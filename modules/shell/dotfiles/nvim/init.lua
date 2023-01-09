@@ -418,5 +418,11 @@ map('v', '>', '>gv', { noremap = true; })
 map('n', '<leader>t', [[<cmd>NvimTreeToggle<cr>]], { noremap = true; })
 map('n', '<leader>r', [[<cmd>TroubleToggle<cr>]], { noremap = true; })
 
+map('n', 'H', [[<cmd>bp<cr>]], { noremap = true; })
+map('n', 'L', [[<cmd>bn<cr>]], { noremap = true; })
+
+map('n', '<C-h>', '<C-w>h', { noremap = true; })
+map('n', '<C-l>', '<C-w>l', { noremap = true; })
+
 ---- Opening braces and pressing enter automatically closes the braces and fixing indent
 map('i', '{<CR>', '{<CR>}<Esc>ko', { noremap = true; })
