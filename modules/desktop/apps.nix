@@ -37,8 +37,8 @@ in {
   };
 
   # Just for fun, an Android container ;-)
-  virtualisation = {
-    waydroid.enable = true;
-    lxd.enable = true;
-  };
+  #virtualisation = {
+  #  waydroid.enable = true;
+  #  lxd.enable = true;
+  #};
 }

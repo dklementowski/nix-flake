@@ -25,6 +25,10 @@ in {
       btop
       neofetch
       unzip
+
+      # LSP dependencies
+      sumneko-lua-language-server
+      nodejs-18_x
     ];
   };
 
@@ -52,9 +56,10 @@ in {
       viAlias = true;
       defaultEditor = true;
       withPython3 = true;
+      withNodeJs = true;
       configure = {
         customRC = ''
-          luafile ${./dotfiles/nvim/init.lua }
+          luafile ${ ./dotfiles/nvim/init.lua }
         '';
 
         packages.plugins = with pkgs.vimPlugins; {

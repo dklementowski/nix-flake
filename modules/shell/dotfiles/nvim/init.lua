@@ -287,8 +287,7 @@ packer.startup(function ()
         padding = { left = 1 },
       }
 
-      require('lualine').setup{
-        -- Now don't forget to initialize lualine
+      lualine.setup{
         lualine.setup(config)
       }
     end
@@ -363,6 +362,8 @@ packer.startup(function ()
         'pyright',
         'tflint',
         'jsonls',
+        'dockerls',
+        'sumneko_lua',
       })
       lsp.setup()
     end
@@ -383,7 +384,6 @@ packer.startup(function ()
   -- Buffer tabs
   use {
     'akinsho/bufferline.nvim',
-    requires = 'nvim-tree/nvim-web-devicons',
     config = function ()
       require("bufferline").setup{}
     end
