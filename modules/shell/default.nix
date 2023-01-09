@@ -9,7 +9,6 @@ in {
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
     };
 
     variables.EDITOR = "nvim";
@@ -19,14 +18,14 @@ in {
       tree
       ripgrep
       wl-clipboard
-
       wget
       curl
-
       git
       ncdu
       btop
       neofetch
+      unzip
+      nodejs-18_x
     ];
   };
 
@@ -57,43 +56,12 @@ in {
       withNodeJs = true;
       configure = {
         customRC = ''
-          " luafile ${./dotfiles/nvim/init.lua}
-          ${builtins.readFile ./dotfiles/vim.vim}
+          luafile ${./dotfiles/nvim/init.lua }
+          luafile ${./dotfiles/nvim/coc.lua }
         '';
 
         packages.plugins = with pkgs.vimPlugins; {
-          start = [
-            vim-packer
-            nvim-lspconfig
-            nvim-lsputils
-            coc-nvim
-            coc-json
-            coc-pyright
-            coc-docker
-            coc-sh
-            coc-yaml
-            coc-markdownlint
-            coc-rust-analyzer
-            coc-lua
-            papercolor-theme
-            lsp-colors-nvim
-            lightline-vim
-            lightline-bufferline
-            vim-lightline-coc
-            vim-nix
-            neo-tree-nvim
-            vim-buffergator
-            nvim-cmp
-            cmp-nvim-ultisnips
-            cmp-nvim-lsp
-            cmp-nvim-lsp-document-symbol
-            gitsigns-nvim
-            vim-terraform
-            papercolor-theme
-            python-syntax
-            vim-devicons
-          ];
-          opt = [ ];
+          start = [ packer-nvim ];
         };
       };
     };
