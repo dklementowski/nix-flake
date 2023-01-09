@@ -21,7 +21,10 @@ in {
     "video=HDMI-A-1:3840x2160@60"
   ];
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Hardware specific packages like AMD GPU utils, hw video accel drivers etc.
   environment.systemPackages = with pkgs; [

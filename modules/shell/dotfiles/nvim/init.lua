@@ -410,6 +410,7 @@ o.expandtab = true
 o.autoindent = true
 o.termguicolors = true
 o.laststatus = 3
+o.cmdheight = 0
 
 -- Mappings
 map('v', '<', '<gv', { noremap = true; })
@@ -426,3 +427,4 @@ map('n', '<C-l>', '<C-w>l', { noremap = true; })
 
 ---- Opening braces and pressing enter automatically closes the braces and fixing indent
 map('i', '{<CR>', '{<CR>}<Esc>ko', { noremap = true; })
+
