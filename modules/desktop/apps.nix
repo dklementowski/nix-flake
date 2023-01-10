@@ -4,8 +4,15 @@ let
   vars = import ../../vars.nix;
 in {
   users.users.${vars.userName}.packages = with pkgs; [
-    # Browser
+    # Interwebs
     firefox
+    tdesktop # Telegram
+    signal-desktop
+    discord
+    protonmail-bridge
+    kmail
+    evolution
+    slack
 
     # Media players
     lollypop
@@ -14,10 +21,7 @@ in {
 
     # Office suite
     libreoffice
-    kmail
     kalendar
-    evolution
-    slack
 
     # Graphics
     gimp

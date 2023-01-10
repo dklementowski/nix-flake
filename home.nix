@@ -13,11 +13,6 @@ in
 
       glfw
     ];
-
-    #TODO investigate why it doesn't work (or does it)
-    sessionVariables = {
-      LV2_PATH = "/etc/profiles/per-user/${vars.userName}/lib/lv2";
-    };
   };
 
   programs = {
@@ -36,5 +31,25 @@ in
     };
 
     mangohud.enable = true;
+  };
+
+  systemd.user = {
+    sessionVariables = {
+      # Make Ardour (and other DAWs detect LV2 plugins)
+      LV2_PATH = "/etc/profiles/per-user/${vars.userName}/lib/lv2";
+    };
+
+    services = {
+      # Extra per-user systemd services
+      protonmail-bridge = {
+        Unit = {
+          Description = "ProtonMail background service for bridge";
+        };
+
+        Service = {
+          ExecStart = "/bin/sh -c protonmail-bridge";
+        };
+      };
+    };
   };
 }
