@@ -56,6 +56,7 @@ packer.startup(function ()
           end
           blmap('n', '<leader>gb', function() gs.blame_line{full=true} end, {})
           blmap('n', '<leader>gp', function() gs.preview_hunk() end, {})
+          blmap('n', '<leader>gr', function() gs.reset_hunk() end, {})
 	end
       }
     end
@@ -446,4 +447,4 @@ map('n', '<C-l>', '<C-w>l', { noremap = true; })
 map('n', '<leader>c', [[<cmd>bd<cr>]], { noremap = true; })
 map('n', '<leader>C', [[<cmd>bd!<cr>]], { noremap = true; })
 
-map('n', '<leader>ds', [[<cmd>lua vim.diagnostic.open_float()<cr>]], {})
+map('n', '<leader>ds', [[<cmd>lua vim.diagnostic.open_float()<cr>]], { noremap = true; })
