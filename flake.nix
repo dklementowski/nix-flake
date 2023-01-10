@@ -39,7 +39,8 @@
               home-manager.useUserPackages = false;
               home-manager.users.${vars.userName} = {
                 imports = [
-                  ./home.nix
+                  ./home-manager/environment.nix
+                  ./home-manager/software.nix
                 ];
               };
             }
