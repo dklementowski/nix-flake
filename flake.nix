@@ -1,5 +1,5 @@
 {
-  description = "My system configuration";
+  description = "System configuration for desktop use on multiple machines";
 
   inputs = {
     nixpkgs = {

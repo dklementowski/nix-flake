@@ -30,7 +30,7 @@ packer.startup(function ()
         },
         filters = {
           dotfiles = true,
-        },     
+        },
       }
     end,
   }
@@ -49,15 +49,13 @@ packer.startup(function ()
 
 	on_attach = function(bufnr)
 	  local gs = package.loaded.gitsigns
-
-          local function map(mode, l, r, opts)
+          local blmap = function(mode, l, r, opts)
             opts = opts or {}
-            opts.buffer = bufnr
+            opts.buffer= bufnr
             vim.keymap.set(mode, l, r, opts)
           end
-
-          map('n', '<leader>gb', function() gs.blame_line{full=true} end)
-          map('n', '<leader>gp', function() gs.preview_hunk() end)
+          blmap('n', '<leader>gb', function() gs.blame_line{full=true} end, {})
+          blmap('n', '<leader>gp', function() gs.preview_hunk() end, {})
 	end
       }
     end
@@ -352,7 +350,7 @@ packer.startup(function ()
     },
     config = function ()
       local lsp = require('lsp-zero')
-      lsp.preset('recommended')
+      lsp.preset('lsp-compe')
 
       -- Reserve space for diagnostic icons
       vim.opt.signcolumn = 'yes'
@@ -364,28 +362,48 @@ packer.startup(function ()
         'jsonls',
         'dockerls',
         'sumneko_lua',
+        'rnix',
       })
+
+      lsp.configure('sumneko_lua', {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' }
+            },
+          },
+        },
+      })
+
       lsp.setup()
     end
   }
 
+  -- List all LSP errors and wanrings
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
   }
 
   -- Buffer tabs
   use {
     'akinsho/bufferline.nvim',
     config = function ()
-      require("bufferline").setup{}
+      require("bufferline").setup{
+        options = {
+          offsets = {
+            {
+              filetype = 'NvimTree',
+              text = 'File Explorer',
+              text_align = 'left',
+              separator = true,
+            },
+          },
+          indicator = {
+            style = 'underline',
+          },
+        },
+      }
     end
   }
 
@@ -402,7 +420,7 @@ g.encoding = 'UTF-8'
 g.mapleader = ' '
 g.updatetime = 300
 
--- Local options
+-- Local to window
 o.number = true
 o.clipboard = 'unnamedplus'
 o.background = 'dark'
@@ -425,6 +443,7 @@ map('n', 'L', [[<cmd>bn<cr>]], { noremap = true; })
 map('n', '<C-h>', '<C-w>h', { noremap = true; })
 map('n', '<C-l>', '<C-w>l', { noremap = true; })
 
----- Opening braces and pressing enter automatically closes the braces and fixing indent
-map('i', '{<CR>', '{<CR>}<Esc>ko', { noremap = true; })
+map('n', '<leader>c', [[<cmd>bd<cr>]], { noremap = true; })
+map('n', '<leader>C', [[<cmd>bd!<cr>]], { noremap = true; })
 
+map('n', '<leader>ds', [[<cmd>lua vim.diagnostic.open_float()<cr>]], {})

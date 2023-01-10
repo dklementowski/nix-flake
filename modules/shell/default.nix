@@ -28,6 +28,7 @@ in {
 
       # LSP dependencies
       sumneko-lua-language-server
+      rnix-lsp
       nodejs-18_x
     ];
   };
