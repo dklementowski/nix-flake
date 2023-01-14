@@ -8,14 +8,17 @@ in
     ./apps.nix
   ];
 
-  # Enable the X11 windowing system.
-  # In theory, that shouldn't be required in some time, but for now SDDM only works on X11.
-  services.xserver.enable = true;
+  # Use Plasma on Wayland as the desktop
+  services.xserver = {
+    # Enable the X11 windowing system.
+    # In theory, that shouldn't be required in some time, but for now SDDM only works on X11.
+    enable = true;
 
-  # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
+    displayManager.defaultSession = "plasmawayland";
+  };
+
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
 
   # Enable desktop portals to play nicely with Wayland and Flatpaks
   xdg.portal.enable = true;

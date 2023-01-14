@@ -8,8 +8,9 @@ in {
     tenacity
     klick
     qpwgraph
+    carla
 
-    # Audio plugins (LV2, VST2, VST3)
+    # Audio plugins (LV2, VST2, VST3, LADSPA)
     distrho
     calf
     eq10q
@@ -18,6 +19,7 @@ in {
     x42-gmsynth
     dragonfly-reverb
     guitarix
+    FIL-plugins
 
     # Support for Windows VST2/VST3 plugins
     yabridge

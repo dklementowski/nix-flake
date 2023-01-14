@@ -8,10 +8,8 @@ in {
     shells = with pkgs; [ zsh ];
 
     shellAliases = {
-      ll = "ls -l";
+      ll = "ls -lah";
     };
-
-    variables.EDITOR = "nvim";
 
     systemPackages = with pkgs; [
       killall

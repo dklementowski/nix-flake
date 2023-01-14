@@ -224,7 +224,7 @@ packer.startup(function ()
         end,
       }
 
-      ins_left {
+      ins_right {
         -- Lsp server name .
         function()
           local msg = 'No Active Lsp'
@@ -364,6 +364,7 @@ packer.startup(function ()
         'dockerls',
         'sumneko_lua',
         'rnix',
+        'yamlls',
       })
 
       lsp.configure('sumneko_lua', {
