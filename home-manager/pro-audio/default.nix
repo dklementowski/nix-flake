@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  vars = import ../vars.nix;
+  vars = import ../../vars.nix;
 
   profilePath = "/etc/profiles/per-user/${vars.userName}";
   homePath    = "/home/${vars.userName}";
@@ -10,15 +10,13 @@ let
   vst3Path    = "${profilePath}/lib/vst3";
   ladspaPath  = "${profilePath}/lib/ladspa";
 in {
-  systemd.user = {
-    sessionVariables = {
-      # Make audio software detect LV2, VST2 and VST3 plugins
-      LV2_PATH    = lv2Path;
-      VST_PATH    = vstPath;
-      LXVST_PATH  = vstPath;
-      VST3_PATH   = vst3Path;
-      LADSPA_PATH = ladspaPath;
-    };
+  systemd.user.sessionVariables = {
+    # Make audio software detect LV2, VST2 and VST3 plugins
+    LV2_PATH    = lv2Path;
+    VST_PATH    = vstPath;
+    LXVST_PATH  = vstPath;
+    VST3_PATH   = vst3Path;
+    LADSPA_PATH = ladspaPath;
   };
 
   # Completely custom dotfiles

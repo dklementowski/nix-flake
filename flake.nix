@@ -10,6 +10,12 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, plasma-manager }@inputs:
@@ -40,9 +46,7 @@
               home-manager.useUserPackages = false;
               home-manager.users.${vars.userName} = {
                 imports = [
-                  ./home-manager/environment.nix
-                  ./home-manager/software.nix
-                  ./home-manager/pro-audio.nix
+                  ./home-manager
                 ];
               };
             }

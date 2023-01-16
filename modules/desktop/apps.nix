@@ -9,7 +9,6 @@ in {
     tdesktop # Telegram
     signal-desktop
     discord
-    protonmail-bridge
     kmail
     evolution
     slack
