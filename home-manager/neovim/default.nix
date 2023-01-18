@@ -3,6 +3,10 @@
 let
   vars = import ../../vars.nix;
 in {
+  systemd.user.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
