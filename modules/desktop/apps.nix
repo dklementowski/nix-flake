@@ -33,6 +33,9 @@ in {
     obs-studio-plugins.obs-gstreamer
     ffmpeg
     kdenlive
+
+    # VM utils
+    virt-manager
   ];
 
   programs = {

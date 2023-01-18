@@ -14,7 +14,6 @@ in {
     tfswitch
     packer
     ansible
-    virt-manager
     podman-compose
     pods
     k9s

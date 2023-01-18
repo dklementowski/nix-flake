@@ -50,6 +50,8 @@ in
     # Fancy terminal font
     nerdfonts
     fira-code-symbols
+
+    (callPackage ./activity-aware {})
   ];
 
   programs = {

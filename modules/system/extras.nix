@@ -7,8 +7,10 @@
 
   # Additional system packages
   environment.systemPackages = with pkgs; [
-    cryptsetup # @TODO move to hosts after moving backup to unencrypted drive
+    cryptsetup # FIXME move to hosts after moving backup to unencrypted drive
     nix-index
     lm_sensors
+
+    networkmanager-fortisslvpn
   ];
 }
