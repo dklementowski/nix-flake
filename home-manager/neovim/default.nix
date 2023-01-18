@@ -15,5 +15,12 @@ in {
     extraConfig = ''
       luafile ${ ./config/init.lua }
     '';
+    extraPackages = with pkgs; [
+      nodejs-18_x
+      python310
+      rustc
+      cargo
+      gcc
+    ];
   };
 }
