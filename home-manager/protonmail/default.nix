@@ -12,11 +12,11 @@ in
     };
 
     Service = {
-      ExecStart = "/bin/sh -c protonmail-bridge";
+      ExecStart = "/bin/sh -c 'sleep 5 && protonmail-bridge'";
     };
 
     Install = {
-      WantedBy = [ "multi-user.target" ];
+      WantedBy = [ "default.target" ];
     };
   };
 }
