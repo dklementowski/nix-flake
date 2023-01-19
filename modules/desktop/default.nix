@@ -21,13 +21,24 @@ in
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable desktop portals to play nicely with Wayland and Flatpaks
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gnome
-  ];
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
 
   # Enable Flatpak support
   services.flatpak.enable = true;
+
+  # Wayland tweaks
+  environment.sessionVariables = {
+    GTK_USE_PORTAL = "1";
+    NIXOS_OZONE_WL = "1";
+  };
 
   environment.systemPackages = with pkgs; [
     # Some missing packages for KDE Plasma desktop
