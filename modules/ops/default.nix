@@ -21,6 +21,8 @@ in {
 
     # Python for runing helper scripts like AWS SSO
     (pkgs.python3.withPackages pythonPackages)
+
+    keepassxc
   ];
 
   virtualisation = {

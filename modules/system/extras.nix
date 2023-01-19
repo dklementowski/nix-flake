@@ -13,4 +13,7 @@
 
     networkmanager-fortisslvpn
   ];
+
+  # Hosts for local VM testing
+  networking.extraHosts = "10.80.81.10 vm.local";
 }
