@@ -37,10 +37,14 @@ in {
   };
 
   # Hardware specific packages like AMD GPU utils, hw video accel drivers etc.
-  environment.systemPackages = with pkgs; [
+
+  hardware.opengl.extraPackages = with pkgs; [
     libva-utils
     libva-minimal
     vaapiVdpau
+  ];
+
+  environment.systemPackages = with pkgs; [
     radeontop
     radeontools
     corectrl

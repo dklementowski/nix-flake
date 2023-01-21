@@ -25,11 +25,15 @@ in {
     powerOnBoot = true;
   };
 
-  # Hardware specific packages like AMD GPU utils, hw video accel drivers etc.
+  # Hardware specific packages, hw video accel drivers etc.
   environment.systemPackages = with pkgs; [
+  ];
+
+  hardware.opengl.extraPackages = with pkgs; [
     intel-media-driver
-    vaapiVdpau
     libvdpau-va-gl
+    libva
+    vaapiVdpau
   ];
 
   networking.hostName = "ThiccPad"; 

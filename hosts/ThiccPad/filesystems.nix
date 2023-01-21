@@ -7,8 +7,12 @@ in {
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.resumeDevice = "/dev/mapper/luks-40db72d4-666a-4b1d-8137-1cad80ce64c1";
+  boot.kernelParams = [ "resume_offset=71960576" ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d8e39c4c-4794-49c8-80c7-e82f757baaa4";
+    {
+      device = "/dev/disk/by-uuid/d8e39c4c-4794-49c8-80c7-e82f757baaa4";
       fsType = "ext4";
     };
 
@@ -19,10 +23,8 @@ in {
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
-
-  #swapDevices = [{
-  #  device = "/swapfile";
-  #  size = 18000;
-  #}];
+  swapDevices = [{
+    device = "/swapfile";
+    size = 20480;
+  }];
 }

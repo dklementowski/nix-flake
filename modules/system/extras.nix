@@ -10,6 +10,7 @@
     cryptsetup # FIXME move to hosts after moving backup to unencrypted drive
     nix-index
     lm_sensors
+    libva-utils
 
     networkmanager-fortisslvpn
   ];
