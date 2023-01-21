@@ -13,8 +13,9 @@ in {
   ];
 
   boot.initrd.luks.devices = {
-    os   = { device = "/dev/disk/by-uuid/${UUIDs.root}"; };
-    swap = { device = "/dev/disk/by-uuid/${UUIDs.swap}"; };
+    os = {
+      device = "/dev/disk/by-uuid/${UUIDs.root}";
+    };
   };
 
   fileSystems = {
@@ -50,6 +51,9 @@ in {
 
   swapDevices = [{
     device = "/dev/disk/by-uuid/${UUIDs.swap}";
-    encrypted.enable = true;
+    encrypted = {
+      enable = true;
+      label = "swap";
+    };
   }];
 }
