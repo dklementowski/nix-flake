@@ -8,19 +8,21 @@ in {
   ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/7f238399-6ef1-4d65-b9ac-0a65032b9b85";
+    { device = "/dev/disk/by-uuid/d8e39c4c-4794-49c8-80c7-e82f757baaa4";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."os".device = "/dev/disk/by-uuid/4280ec95-e2af-426e-9889-7e155589a76f";
+  boot.initrd.luks.devices."luks-40db72d4-666a-4b1d-8137-1cad80ce64c1".device = "/dev/disk/by-uuid/40db72d4-666a-4b1d-8137-1cad80ce64c1";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B49E-F6C7";
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/3865-F6CD";
       fsType = "vfat";
     };
 
-  swapDevices = [{
-    device = "/swapfile";
-    size = 18000;
-  }];
+  swapDevices = [ ];
+
+  #swapDevices = [{
+  #  device = "/swapfile";
+  #  size = 18000;
+  #}];
 }

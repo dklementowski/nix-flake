@@ -6,6 +6,5 @@ in {
   imports = [
     ./filesystems.nix
     ./hardware.nix
-    ./custom.nix
   ];
 }
