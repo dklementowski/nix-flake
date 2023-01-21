@@ -67,6 +67,6 @@ in {
     };
   };
 
-  #TODO setup swap + hibernation
-  swapDevices = [ ];
+  swapDevices = 
+    [{ device = "/dev/disk/by-uuid/fd460598-98f1-4f4b-b77c-f4c7a2432830"; }];
 }
