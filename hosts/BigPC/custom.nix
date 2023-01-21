@@ -3,6 +3,7 @@
 let
   vars = import ../../vars.nix;
 in {
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = pkgs.linuxPackages_6_0;
 
   networking.hostName = "BigPC"; 

@@ -2,58 +2,25 @@
 
 let
   vars = import ../../vars.nix;
-  UUIDs = {
-    efi    = "B49E-F6C7";
-    root   = "fec73dd4-9e1d-4632-8bf3-41e011834756";
-    swap   = "c7e5502c-f02c-40e2-bced-19afd6332d14";
-  };
 in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.luks.devices = {
-    os = {
-      device = "/dev/disk/by-uuid/${UUIDs.root}";
-    };
-  };
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/${UUIDs.root}";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/7f238399-6ef1-4d65-b9ac-0a65032b9b85";
+      fsType = "ext4";
     };
 
-    "/nix" = {
-      device = "/dev/disk/by-uuid/${UUIDs.root}";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
+  boot.initrd.luks.devices."os".device = "/dev/disk/by-uuid/4280ec95-e2af-426e-9889-7e155589a76f";
 
-    "/var" = {
-      device = "/dev/disk/by-uuid/${UUIDs.root}";
-      fsType = "btrfs";
-      options = [ "subvol=@var" ];
-    };
-
-    "/home" = {
-      device = "/dev/disk/by-uuid/${UUIDs.root}";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
-    "/boot/efi" = {
-      device = "/dev/disk/by-uuid/${UUIDs.efi}";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/B49E-F6C7";
       fsType = "vfat";
     };
-  };
 
   swapDevices = [{
-    device = "/dev/disk/by-uuid/${UUIDs.swap}";
-    encrypted = {
-      enable = true;
-      label = "swap";
-    };
+    device = "/swapfile";
+    size = 18000;
   }];
 }
