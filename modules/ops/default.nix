@@ -18,6 +18,7 @@ in {
     pods
     k9s
     awscli2
+    dnsutils
 
     # Python for runing helper scripts like AWS SSO
     (pkgs.python3.withPackages pythonPackages)

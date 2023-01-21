@@ -27,35 +27,47 @@
       };
       lib = nixpkgs.lib;
       vars = import ./vars.nix;
-      mkSystem = pkgs: hostname:
-        pkgs.lib.nixosSystem {
+      commonModules = [
+        ./modules/system
+        ./modules/shell
+        ./modules/desktop
+        ./modules/audio
+      ];
+      commonHomeManagerModules = [
+        ./home/kitty
+        ./home/zsh
+        ./home/tmux
+        ./home/neovim
+        ./home/plasma
+        ./home/protonmail
+        ./home/gaming
+        ./home/pro-audio
+      ];
+    in {
+      nixosConfigurations = {
+        BigPC = lib.nixosSystem {
           inherit system;
-          modules = [
-            { networking.hostName = hostname; }
 
-            ./modules/system
-            ./modules/shell
-            ./modules/desktop
-            ./modules/audio
+          modules = commonModules ++ [
+            ./hosts/BigPC
             ./modules/gaming
             ./modules/ops
-            ./hosts/${hostname}
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
+              home-manager.sharedModules = [
+                inputs.plasma-manager.homeManagerModules.plasma-manager
+              ];
               home-manager.users.${vars.userName} = {
-                imports = [
-                  ./home-manager
+                home.stateVersion = vars.stateVersion;
+                imports = commonHomeManagerModules ++ [
+                  # Home Manager modules for BigPC - none for now
                 ];
               };
             }
           ];
         };
-    in {
-      nixosConfigurations = {
-        BigPC = mkSystem inputs.nixpkgs "BigPC";
-        #ThiccPad = mkSystem inputs.nixpkgs "ThiccPad";
       };
     };
 }

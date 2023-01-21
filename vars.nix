@@ -1,5 +1,7 @@
 {
   userName = "dominik";
+  homeDir = "/home/dominik";
+
   timeZone = "Europe/Warsaw";
   defaultLocale = "pl_PL.UTF-8";
 

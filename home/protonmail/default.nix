@@ -12,7 +12,7 @@ in
     };
 
     Service = {
-      ExecStart = "/bin/sh -c 'sleep 5 && protonmail-bridge'";
+      ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge";
     };
 
     Install = {

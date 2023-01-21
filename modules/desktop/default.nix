@@ -47,6 +47,9 @@ in
     bluedevil
     discover
     ark
+    libsForQt5.accounts-qt
+    libsForQt5.kaccounts-integration
+    libsForQt5.kaccounts-providers
 
     # I don't find AppImages all that useful theese days, but it doesn't seem like
     # a whole lot of packages to keep supporting them either.
