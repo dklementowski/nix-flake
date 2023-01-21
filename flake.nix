@@ -32,6 +32,8 @@
         ./modules/shell
         ./modules/desktop
         ./modules/audio
+        ./modules/gaming
+        ./modules/ops
       ];
       commonHomeManagerModules = [
         ./home/kitty
@@ -50,9 +52,6 @@
 
           modules = commonModules ++ [
             ./hosts/BigPC
-            ./modules/gaming
-            ./modules/ops
-
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
@@ -63,6 +62,27 @@
                 home.stateVersion = vars.stateVersion;
                 imports = commonHomeManagerModules ++ [
                   # Home Manager modules for BigPC - none for now
+                ];
+              };
+            }
+          ];
+        };
+
+        ThiccPad = lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            ./hosts/ThiccPad
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = false;
+              home-manager.useUserPackages = false;
+              home-manager.sharedModules = [
+                inputs.plasma-manager.homeManagerModules.plasma-manager
+              ];
+              home-manager.users.${vars.userName} = {
+                home.stateVersion = vars.stateVersion;
+                imports = commonHomeManagerModules ++ [
+                  # Home Manager modules for ThiccPad - none for now
                 ];
               };
             }
