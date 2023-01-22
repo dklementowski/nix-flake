@@ -17,6 +17,7 @@ in {
   users.users.${vars.userName}.packages = with pkgs; [
     # Interwebs
     firefox
+    nextcloud-client
     tdesktop # Telegram
     signal-desktop
     discord
