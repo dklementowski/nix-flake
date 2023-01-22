@@ -20,7 +20,7 @@ in {
     tdesktop # Telegram
     signal-desktop
     discord
-    kmail
+    gnome.geary
     evolution
     slackWayland
     # teams-for-linux # TODO check again in some time if it still crashes
@@ -48,6 +48,10 @@ in {
 
     # VM utils
     virt-manager
+
+    # Other tools
+    keepassxc
+    pass
   ];
 
   programs = {

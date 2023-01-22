@@ -22,8 +22,6 @@ in {
 
     # Python for runing helper scripts like AWS SSO
     (pkgs.python3.withPackages pythonPackages)
-
-    keepassxc
   ];
 
   virtualisation = {
@@ -32,7 +30,7 @@ in {
     podman = {
       enable = true;
       dockerCompat = true;
-      #defaultNetwork.settings.dns_enabled = true;
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
 }
