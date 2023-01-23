@@ -39,7 +39,7 @@
         ./home/kitty
         ./home/shell
         ./home/neovim
-        ./home/plasma
+        ./home/desktop
         ./home/protonmail
         ./home/gaming
         ./home/pro-audio
