@@ -14,6 +14,9 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  # Plymouth splash screen
+  boot.plymouth.enable = true;
+
   # Allow non-free software, sorry Richard
   nixpkgs.config.allowUnfree = true; 
 

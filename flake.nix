@@ -40,7 +40,7 @@
         ./home/zsh
         ./home/tmux
         ./home/neovim
-        ./home/plasma
+        ./home/desktop
         ./home/protonmail
         ./home/gaming
         ./home/pro-audio
