@@ -16,7 +16,7 @@ in {
     };
 
     kernelModules = [ "kvm-intel" ];
-    kernelPackages = pkgs.linuxPackages_5_15;
+    kernelPackages = pkgs.linuxPackages_6_1;
     extraModulePackages = with config.boot.kernelPackages; [];
   };
 

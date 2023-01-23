@@ -30,14 +30,6 @@ in
   # Use NetworkManager for network management
   networking.networkmanager.enable = true;
 
-  # Basic distro settings
-  # Note: don't update the stateVersion variable when switching to newer version
-  system.stateVersion = vars.stateVersion; # Did you read the comment?
-  system.autoUpgrade = {
-    enable = true;
-    channel = "https://nixos.org/channels/nixos-${vars.currentVersion}";
-  };
-
   # Let's just keep that here for now...
   nix = {
     package = pkgs.nixFlakes;
