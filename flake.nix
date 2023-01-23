@@ -37,8 +37,7 @@
       ];
       commonHomeManagerModules = [
         ./home/kitty
-        ./home/zsh
-        ./home/tmux
+        ./home/shell
         ./home/neovim
         ./home/plasma
         ./home/protonmail

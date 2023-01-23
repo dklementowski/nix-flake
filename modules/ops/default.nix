@@ -25,7 +25,11 @@ in {
   ];
 
   virtualisation = {
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu.ovmf.enable = true;
+      qemu.package = pkgs.qemu_kvm;
+    };
 
     podman = {
       enable = true;

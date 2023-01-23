@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
-let
-  vars = import ../../vars.nix;
-in {
+{
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
