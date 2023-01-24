@@ -30,6 +30,8 @@ in {
       unzip
       gnupg
     ];
+
+    localBinInPath = true;
   };
 
   programs.ssh.startAgent = true;
