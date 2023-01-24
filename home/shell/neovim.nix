@@ -1,15 +1,9 @@
 { config, pkgs, ... }:
 
-let
-  vars = import ../../vars.nix;
-in {
-  systemd.user.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
+{
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = true; # This fails on zsh for some reason
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -17,7 +11,7 @@ in {
     withPython3 = true;
     plugins = [ pkgs.vimPlugins.packer-nvim ];
     extraConfig = ''
-      luafile ${ ./config/init.lua }
+      luafile ${ ./config/neovim.lua }
     '';
     extraPackages = with pkgs; [
       nodejs-18_x

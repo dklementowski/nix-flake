@@ -38,7 +38,6 @@
       commonHomeManagerModules = [
         ./home/kitty
         ./home/shell
-        ./home/neovim
         ./home/plasma
         ./home/protonmail
         ./home/gaming

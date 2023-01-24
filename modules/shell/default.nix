@@ -5,6 +5,11 @@ let
 in {
   # Configure shell basics
   environment = {
+    variables = {
+      EDITOR = "nvim";
+      BROWSER = "xdg-open";
+    };
+
     shells = with pkgs; [ zsh ];
 
     shellAliases = {

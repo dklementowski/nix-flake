@@ -7,10 +7,8 @@ in {
 
   imports = [
     # Shell, Terminals
-    ./neovim
-    ./zsh
+    ./shell
     ./kitty
-    ./tmux
 
     # Additional desktop stuff
     ./gaming

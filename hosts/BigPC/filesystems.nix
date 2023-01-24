@@ -55,19 +55,16 @@ in {
       };
     };
 
-    "/mnt/sandisk" = {
-      # TODO change to /mnt/games.
-      # I don't like the name, but it's hardcoded in so many places at this point :/
+    "/mnt/games" = {
       device = "/dev/disk/by-uuid/${UUIDs.games}";
       fsType = "btrfs";
     };
 
     "/home/${vars.userName}/Games" = {
-      device = "/mnt/sandisk/Games";
+      device = "/mnt/games/Games";
       options = [ "bind" ];
     };
   };
 
-  swapDevices = 
-    [{ device = "/dev/disk/by-uuid/${UUIDs.swap}"; }];
+  swapDevices = [{ device = "/dev/disk/by-uuid/${UUIDs.swap}"; }];
 }

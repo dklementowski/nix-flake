@@ -1,8 +1,6 @@
 { configs, pkgs, ... }:
 
-let
-  vars = ../../vars.nix;
-in {
+{
   # DRI support for OpenGL and Vulkan (with 32bit support for older games)
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
@@ -10,8 +8,8 @@ in {
   # Steam
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    # remotePlay.openFirewall = true;
+    # dedicatedServer.openFirewall = true;
   };
 
   # Additional packages for games
