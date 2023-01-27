@@ -32,7 +32,7 @@ in {
     mpv
 
     # Office suite
-    libreoffice
+    libreoffice-still
     kalendar
 
     # Graphics
