@@ -20,6 +20,7 @@ in {
     dragonfly-reverb
     guitarix
     FIL-plugins
+    geonkick
 
     # Support for Windows VST2/VST3 plugins
     yabridge

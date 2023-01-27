@@ -31,9 +31,10 @@ in {
     spotify
     mpv
 
-    # Office suite
+    # Office / accessories
     libreoffice-still
     kalendar
+    speedcrunch
 
     # Graphics
     gimp
