@@ -12,11 +12,11 @@ in
     };
 
     Service = {
-      ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge";
+      ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge --noninteractive --no-window";
     };
 
     Install = {
-      WantedBy = [ "default.target" ];
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 }

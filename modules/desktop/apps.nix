@@ -53,7 +53,6 @@ in {
 
     # Other tools
     keepassxc
-    pass
   ];
 
   programs = {
