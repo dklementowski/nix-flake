@@ -24,7 +24,6 @@ in {
     tenacity
     klick
     qpwgraph
-    carla
 
     # Audio plugins (LV2, VST2, VST3, LADSPA)
     distrho
