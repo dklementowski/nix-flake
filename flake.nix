@@ -36,6 +36,13 @@
         ./modules/ops
       ];
       commonHomeManagerModules = [
+        {
+          nixpkgs.config.allowUnfree = true;
+
+          nixpkgs.overlays = [
+            ( import ./overlays/tonelib.nix )
+          ];
+        }
         ./home/kitty
         ./home/shell
         ./home/plasma

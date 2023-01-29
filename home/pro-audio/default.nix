@@ -36,6 +36,8 @@ in {
     guitarix
     FIL-plugins
     geonkick
+    tonelib-gfx
+    tonelib-metal
 
     # Support for Windows VST2/VST3 plugins
     yabridge
