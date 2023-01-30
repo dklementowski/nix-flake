@@ -68,6 +68,8 @@ in
     (callPackage ./activity-aware {})
   ];
 
+  services.dbus.packages = [ pkgs.gcr ];
+
   programs = {
     kdeconnect.enable = true;
 

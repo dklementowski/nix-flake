@@ -28,7 +28,6 @@ in {
       btop
       neofetch
       unzip
-      gnupg
     ];
 
     localBinInPath = true;

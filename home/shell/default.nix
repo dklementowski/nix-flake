@@ -39,6 +39,12 @@
     ];
   };
 
+  programs.gpg.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "qt";
+  };
+
   programs.password-store = {
     enable = true;
     package = pkgs.pass-wayland.withExtensions (es: with es; [
