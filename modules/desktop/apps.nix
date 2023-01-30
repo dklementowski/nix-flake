@@ -22,7 +22,6 @@ in {
     signal-desktop
     discord
     gnome.geary
-    evolution
     slackWayland
     # teams-for-linux # TODO check again in some time if it still crashes
 
@@ -55,7 +54,18 @@ in {
     keepassxc
   ];
 
+
   programs = {
     partition-manager.enable = true;
+
+    evolution = {
+      enable = true;
+      plugins = with pkgs; [
+        evolution-ews
+        gnome.gnome-keyring
+      ];
+    };
   };
+
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
 }
