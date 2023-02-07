@@ -1,4 +1,3 @@
-# nix run github:pjones/plasma-manager
 {
   programs.plasma = {
     enable = true;
@@ -252,7 +251,7 @@
       "kactivitymanagerdrc"."activities"."42959bd9-24e5-4383-be69-ae61345df7bf" = "Praca";
       "kactivitymanagerdrc"."activities-icons"."35c52531-09b9-4dc3-a0e8-7da41b10af36" = "users";
       "kactivitymanagerdrc"."activities-icons"."42959bd9-24e5-4383-be69-ae61345df7bf" = "susers";
-      "kactivitymanagerdrc"."main"."currentActivity" = "35c52531-09b9-4dc3-a0e8-7da41b10af36";
+      "kactivitymanagerdrc"."main"."currentActivity" = "42959bd9-24e5-4383-be69-ae61345df7bf";
       "kcminputrc"."Libinput.1133.16388.Logitech K360"."Enabled" = true;
       "kcminputrc"."Libinput.1356.2508.Wireless Controller Touchpad"."Enabled" = false;
       "kcminputrc"."Libinput.1356.3302.Wireless Controller Touchpad"."Enabled" = false;
@@ -268,6 +267,8 @@
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
       "kdeglobals"."General"."BrowserApplication" = "activity-aware-firefox.desktop";
       "kdeglobals"."General"."LastUsedCustomAccentColor" = "61,174,233";
+      "kdeglobals"."General"."TerminalApplication" = "kitty";
+      "kdeglobals"."General"."TerminalService" = "kitty.desktop";
       "kdeglobals"."KDE"."ShowDeleteCommand" = false;
       "kdeglobals"."KDE"."SingleClick" = true;
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
@@ -343,6 +344,8 @@
       "khotkeysrc"."General"."ColorSchemeHash[$d]" = "";
       "khotkeysrc"."General"."ColorScheme[$d]" = "";
       "khotkeysrc"."General"."LastUsedCustomAccentColor[$d]" = "";
+      "khotkeysrc"."General"."TerminalApplication[$d]" = "";
+      "khotkeysrc"."General"."TerminalService[$d]" = "";
       "khotkeysrc"."Gestures"."Disabled" = true;
       "khotkeysrc"."Gestures"."MouseButton" = 2;
       "khotkeysrc"."Gestures"."Timeout" = 300;
@@ -410,21 +413,40 @@
       "kwinrc"."Desktops"."Rows" = 1;
       "kwinrc"."Effect-overview"."BorderActivate" = 7;
       "kwinrc"."Effect-windowview"."BorderActivateAll" = 9;
+      "kwinrc"."Effect-wobblywindows"."ResizeWobble" = false;
+      "kwinrc"."NightColor"."Active" = true;
+      "kwinrc"."NightColor"."LatitudeAuto" = 51.1043;
+      "kwinrc"."NightColor"."LongitudeAuto" = 17.0335;
+      "kwinrc"."NightColor"."NightTemperature" = 5500;
       "kwinrc"."Plugins"."blurEnabled" = true;
       "kwinrc"."Plugins"."contrastEnabled" = false;
-      "kwinrc"."Plugins"."kwin4_effect_squashEnabled" = false;
-      "kwinrc"."Plugins"."magiclampEnabled" = true;
+      "kwinrc"."Plugins"."hide-titlesEnabled" = true;
       "kwinrc"."Plugins"."mousemarkEnabled" = true;
-      "kwinrc"."Plugins"."wobblywindowsEnabled" = true;
       "kwinrc"."TabBox"."DesktopMode" = 0;
       "kwinrc"."TabBox"."HighlightWindows" = false;
       "kwinrc"."Xwayland"."Scale" = 1;
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnLeft" = "XI";
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnRight" = "M";
       "kwinrc"."org.kde.kdecoration2"."CloseOnDoubleClickOnMenu" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."Description" = "Ustawienia okna dla steamwebhelper";
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."clientmachine" = "localhost";
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."maximizehoriz" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."maximizehorizrule" = 2;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."maximizevert" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."maximizevertrule" = 2;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."noborder" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."noborderrule" = 2;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."skiptaskbar" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."skiptaskbarrule" = 2;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."types" = 1;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."wmclass" = "steamwebhelper steamwebhelper";
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."wmclasscomplete" = true;
+      "kwinrulesrc"."5cd54f50-880c-4345-b0f8-58a118fe96df"."wmclassmatch" = 1;
       "kxkbrc"."Layout"."LayoutList" = "pl";
       "kxkbrc"."Layout"."Use" = true;
       "plasma-localerc"."Formats"."LANG" = "pl_PL.UTF-8";
+      "plasmarc"."Theme"."name" = "spectrum-classic-dark-hidpi";
+      "plasmarc"."Wallpapers"."usersWallpapers" = "/home/dominik/.local/share/wallpapers/02.jpg";
       "systemsettingsrc"."KFileDialog Settings"."detailViewIconSize" = 16;
       "systemsettingsrc"."Open-with settings"."CompletionMode" = 1;
       "systemsettingsrc"."Open-with settings"."History" = "next,brid";

@@ -365,6 +365,8 @@ packer.startup(function ()
         'sumneko_lua',
         'rnix',
         'yamlls',
+        'rust_analyzer',
+        'taplo' -- toml,
       })
 
       lsp.configure('sumneko_lua', {

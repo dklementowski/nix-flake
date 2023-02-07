@@ -16,9 +16,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    devenv = {
+      url = "github:cachix/devenv/v0.5.1";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, devenv }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -34,6 +38,7 @@
         ./modules/audio
         ./modules/gaming
         ./modules/ops
+
       ];
       commonHomeManagerModules = [
         {
@@ -41,6 +46,10 @@
 
           nixpkgs.overlays = [
             ( import ./overlays/tonelib.nix )
+          ];
+ 
+          home.packages = [
+            devenv.packages.x86_64-linux.devenv
           ];
         }
         ./home/kitty

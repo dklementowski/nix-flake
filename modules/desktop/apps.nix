@@ -23,7 +23,7 @@ in {
     discord
     gnome.geary
     slackWayland
-    # teams-for-linux # TODO check again in some time if it still crashes
+    teams-for-linux
 
     # Media players
     lollypop
