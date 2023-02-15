@@ -27,7 +27,7 @@ in {
 
     # Media players
     lollypop
-    #spotify
+    spotify
     mpv
 
     # Office / accessories
