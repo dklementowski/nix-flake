@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:nixos/nixpkgs/a217df51cf3d4a6dba245eba903f1b5604ca30a1;
+      url = github:nixos/nixpkgs/0059f767b9813c1fa26cb9b5986d883ef95fb560;
     };
 
     home-manager = {

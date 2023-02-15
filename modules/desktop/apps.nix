@@ -60,12 +60,9 @@ in {
 
     evolution = {
       enable = true;
-      #plugins = with pkgs; [
-      #  evolution-ews
-      #  gnome.gnome-keyring
-      #];
+      plugins = with pkgs; [ evolution-ews ];
     };
   };
 
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
+  services.gnome.gnome-keyring.enable = true;
 }
