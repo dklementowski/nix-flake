@@ -27,7 +27,7 @@ in {
 
     # Media players
     lollypop
-    spotify
+    #spotify
     mpv
 
     # Office / accessories
@@ -60,10 +60,10 @@ in {
 
     evolution = {
       enable = true;
-      plugins = with pkgs; [
-        evolution-ews
-        gnome.gnome-keyring
-      ];
+      #plugins = with pkgs; [
+      #  evolution-ews
+      #  gnome.gnome-keyring
+      #];
     };
   };
 
