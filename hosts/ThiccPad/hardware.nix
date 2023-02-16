@@ -16,7 +16,7 @@ in {
     };
 
     kernelModules = [ "kvm-intel" ];
-    kernelPackages = pkgs.linuxPackages_6_1;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_1;
     extraModulePackages = with config.boot.kernelPackages; [];
   };
 
@@ -40,4 +40,6 @@ in {
   networking.useDHCP = lib.mkDefault true;
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.fwupd.enable = true;
 }

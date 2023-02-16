@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:nixos/nixpkgs/0059f767b9813c1fa26cb9b5986d883ef95fb560;
+      url = github:nixos/nixpkgs/nixpkgs-unstable;
     };
 
     home-manager = {
@@ -87,6 +87,7 @@
 
           modules = commonModules ++ [
             ./hosts/ThiccPad
+
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
