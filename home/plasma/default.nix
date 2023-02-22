@@ -251,7 +251,7 @@
       "kactivitymanagerdrc"."activities"."42959bd9-24e5-4383-be69-ae61345df7bf" = "Praca";
       "kactivitymanagerdrc"."activities-icons"."35c52531-09b9-4dc3-a0e8-7da41b10af36" = "users";
       "kactivitymanagerdrc"."activities-icons"."42959bd9-24e5-4383-be69-ae61345df7bf" = "susers";
-      "kactivitymanagerdrc"."main"."currentActivity" = "42959bd9-24e5-4383-be69-ae61345df7bf";
+      #"kactivitymanagerdrc"."main"."currentActivity" = "42959bd9-24e5-4383-be69-ae61345df7bf";
       "kcminputrc"."Libinput.1133.16388.Logitech K360"."Enabled" = true;
       "kcminputrc"."Libinput.1356.2508.Wireless Controller Touchpad"."Enabled" = false;
       "kcminputrc"."Libinput.1356.3302.Wireless Controller Touchpad"."Enabled" = false;
