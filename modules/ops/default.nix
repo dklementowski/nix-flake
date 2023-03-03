@@ -7,6 +7,7 @@ let
     pyyaml
     validate-email
     docopt
+    pydns
   ];
 in {
   users.users.${vars.userName}.packages = with pkgs; [

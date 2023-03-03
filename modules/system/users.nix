@@ -9,5 +9,6 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "audio" "libvirtd" ];
     shell = pkgs.zsh;
+    description = "Dominik";
   };
 }
