@@ -42,4 +42,15 @@ in {
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   services.fwupd.enable = true;
+
+  # Printing support including WiFi printers
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    gutenprint      # most printer drivers
+    gutenprintBin   # some more binary drivers
+    canon-cups-ufr2 # specifically for Canon
+  ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  services.avahi.openFirewall = true;
 }
