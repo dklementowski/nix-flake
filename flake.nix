@@ -45,7 +45,7 @@
           nixpkgs.config.allowUnfree = true;
 
           nixpkgs.overlays = [
-            ( import ./overlays/tonelib.nix )
+            # ( import ./overlays/tonelib.nix )
           ];
  
           home.packages = [
@@ -75,7 +75,7 @@
               home-manager.users.${vars.userName} = {
                 home.stateVersion = vars.stateVersion;
                 imports = commonHomeManagerModules ++ [
-                  # Home Manager modules for BigPC - none for now
+                  ./hosts/BigPC/home-manager
                 ];
               };
             }
@@ -97,7 +97,7 @@
               home-manager.users.${vars.userName} = {
                 home.stateVersion = vars.stateVersion;
                 imports = commonHomeManagerModules ++ [
-                  # Home Manager modules for ThiccPad - none for now
+                  ./hosts/ThiccPad/home-manager
                 ];
               };
             }

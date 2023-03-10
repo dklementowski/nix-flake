@@ -4,7 +4,6 @@
   programs.kitty = {
     enable = true;
     font.name = "FiraCode Nerd Font";
-    font.size = 12;
 
     settings = {
       wayland_titlebar_color = "#000000";
