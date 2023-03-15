@@ -18,6 +18,8 @@ in {
     podman-compose
     pods
     k9s
+    kubectl
+    kubernetes-helm
     awscli2
     dnsutils
 
