@@ -40,4 +40,8 @@ in {
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  environment.shellAliases = {
+    kcd = "kubectl config set-context $(kubectl config current-context) --namespace";
+  };
 }
