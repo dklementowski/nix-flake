@@ -16,7 +16,7 @@ in {
       kernelModules = [ "amdgpu" ];
     };
 
-    kernelPackages = pkgs.linuxPackages_6_2;
+    kernelPackages = pkgs.linuxPackages_6_1;
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = with config.boot.kernelPackages; [
       it87

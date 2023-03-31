@@ -40,7 +40,7 @@ in {
     # Support for Windows VST2/VST3 plugins
     yabridge
     yabridgectl
-    wine
+    wineWowPackages.stable
   ];
 
   # Setup Yabridge
