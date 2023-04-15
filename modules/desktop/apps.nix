@@ -31,7 +31,7 @@ in {
     mpv
 
     # Office / accessories
-    libreoffice-still
+    libreoffice-fresh
     kalendar
     speedcrunch
 

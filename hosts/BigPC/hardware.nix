@@ -38,7 +38,6 @@ in {
 
   # Hardware specific packages like AMD GPU utils, hw video accel drivers etc.
 
-  hardware.opengl.mesaPackage = pkgs.mesa_23;
   hardware.opengl.extraPackages = with pkgs; [
     libva-utils
     libva-minimal

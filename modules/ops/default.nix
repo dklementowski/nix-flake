@@ -8,6 +8,7 @@ let
     validate-email
     docopt
     pydns
+    pip
   ];
 in {
   users.users.${vars.userName}.packages = with pkgs; [

@@ -12,7 +12,7 @@ in
     };
 
     Service = {
-      ExecStart = "${pkgs.protonmail-bridge}/bin/bridge --noninteractive --no-window";
+      ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge --noninteractive --no-window";
     };
 
     Install = {

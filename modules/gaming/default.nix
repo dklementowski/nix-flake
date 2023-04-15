@@ -5,6 +5,12 @@
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
+  # Enable experimental support for RADV Graphics Pipeline feature
+  # That will be default starting with Mesa 23.1
+  environment.variables = {
+    RADV_PERFTEST = "gpl";
+  };
+
   # Steam
   programs.steam = {
     enable = true;
@@ -23,5 +29,6 @@
     xboxdrv
     gamescope
     steamtinkerlaunch
+    mesa-demos
   ];
 }
