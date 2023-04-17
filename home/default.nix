@@ -29,4 +29,6 @@ in {
     templates   = "${config.home.homeDirectory}/Szablony";
     publicShare = "${config.home.homeDirectory}/Publiczny";
   };
+
+  services.syncthing.enable = true;
 }

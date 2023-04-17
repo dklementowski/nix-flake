@@ -34,7 +34,7 @@
       commonModules = [
         ./modules/system
         ./modules/shell
-        ./modules/desktop
+        ./modules/apps
         ./modules/audio
         ./modules/gaming
         ./modules/ops
@@ -54,7 +54,6 @@
         }
         ./home/kitty
         ./home/shell
-        ./home/plasma
         ./home/protonmail
         ./home/gaming
         ./home/pro-audio
@@ -66,6 +65,8 @@
 
           modules = commonModules ++ [
             ./hosts/BigPC
+            ./modules/gnome
+
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
@@ -87,6 +88,7 @@
 
           modules = commonModules ++ [
             ./hosts/ThiccPad
+            ./modules/plasma
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
@@ -98,6 +100,7 @@
                 home.stateVersion = vars.stateVersion;
                 imports = commonHomeManagerModules ++ [
                   ./hosts/ThiccPad/home-manager
+                  ./home/plasma
                 ];
               };
             }

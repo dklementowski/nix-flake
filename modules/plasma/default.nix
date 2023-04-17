@@ -18,7 +18,6 @@ in
     };
   };
   security.pam.services.greetd.enableKwallet = true;
-
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable desktop portals to play nicely with Wayland and Flatpaks
@@ -64,10 +63,6 @@ in
   ];
 
   users.users.${vars.userName}.packages = with pkgs; [
-    # Fancy terminal font
-    nerdfonts
-    fira-code-symbols
-
     (callPackage ./activity-aware {})
   ];
 
@@ -75,6 +70,7 @@ in
 
   programs = {
     kdeconnect.enable = true;
+    partition-manager.enable = true;
 
     # Workaround for badly themed GTK apps on Wayland
     dconf.enable = true;
