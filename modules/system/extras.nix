@@ -11,6 +11,7 @@
     nix-index
     lm_sensors
     libva-utils
+    usbutils
 
     networkmanager-fortisslvpn
   ];

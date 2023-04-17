@@ -8,15 +8,16 @@ in
     ./apps.nix
   ];
 
-  # Use Plasma on Wayland as the desktop
-  services.xserver = {
-    # Enable the X11 windowing system.
-    # In theory, that shouldn't be required in some time, but for now SDDM only works on X11.
+  services.greetd = {
     enable = true;
-
-    displayManager.sddm.enable = true;
-    displayManager.defaultSession = "plasmawayland";
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd startplasma-wayland";
+        user = vars.userName;
+      };
+    };
   };
+  security.pam.services.greetd.enableKwallet = true;
 
   services.xserver.desktopManager.plasma5.enable = true;
 
@@ -47,14 +48,15 @@ in
     bluedevil
     discover
     ark
+    okular
+    gwenview
+    dolphin
+
     libsForQt5.accounts-qt
     libsForQt5.kaccounts-integration
     libsForQt5.kaccounts-providers
     libsForQt5.applet-window-buttons
-
-    # I don't find AppImages all that useful theese days, but it doesn't seem like
-    # a whole lot of packages to keep supporting them either.
-    appimage-run
+    libsForQt5.polkit-kde-agent
 
     # Use GNOME's cursor to overcome this bug: https://gitlab.freedesktop.org/drm/amd/-/issues/1513
     # Forcing software curosr fixes how it looks, but introduces other glitches.
