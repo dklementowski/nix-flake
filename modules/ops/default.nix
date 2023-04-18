@@ -23,6 +23,7 @@ in {
     kubernetes-helm
     awscli2
     dnsutils
+    sipcalc
 
     # Python for runing helper scripts like AWS SSO
     (pkgs.python3.withPackages pythonPackages)

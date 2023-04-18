@@ -57,6 +57,7 @@
         ./home/protonmail
         ./home/gaming
         ./home/pro-audio
+        ./home/ops
       ];
     in {
       nixosConfigurations = {

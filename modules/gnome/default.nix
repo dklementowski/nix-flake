@@ -13,6 +13,7 @@ in {
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator
     gnome.gnome-tweaks
+    tela-icon-theme
   ];
 
   programs.gpaste.enable = true;
