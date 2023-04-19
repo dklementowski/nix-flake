@@ -14,6 +14,8 @@
     usbutils
 
     networkmanager-fortisslvpn
+    xdg-utils
+    usbutils
   ];
 
   programs.command-not-found.enable = true;
