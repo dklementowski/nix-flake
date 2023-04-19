@@ -4,10 +4,6 @@ let
   vars = import ../../vars.nix;
 in
 {
-  imports = [
-    ./apps.nix
-  ];
-
   services.greetd = {
     enable = true;
     settings = {
