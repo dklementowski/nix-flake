@@ -11,6 +11,11 @@
     RADV_PERFTEST = "gpl";
   };
 
+  # Avoid crashes in some Windows games
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = "2147483642";
+  };
+
   # Steam
   programs.steam = {
     enable = true;

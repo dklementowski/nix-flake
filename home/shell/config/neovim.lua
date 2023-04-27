@@ -341,7 +341,6 @@ packer.startup(function ()
         'jsonls',
         'dockerls',
         'rnix',
-        'yamlls',
         'rust_analyzer',
         'taplo' -- toml,
       })

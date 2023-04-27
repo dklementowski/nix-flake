@@ -21,6 +21,7 @@ in {
     extraModulePackages = with config.boot.kernelPackages; [
       it87
       v4l2loopback
+      rtl88x2bu
     ];
   };
 
