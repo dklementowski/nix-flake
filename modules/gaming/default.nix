@@ -32,8 +32,6 @@
 
     # System-wide utilities
     xboxdrv
-    gamescope
-    steamtinkerlaunch
     mesa-demos
   ];
 }

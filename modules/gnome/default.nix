@@ -12,6 +12,8 @@ in {
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-dock
     gnomeExtensions.appindicator
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.battery-indicator-upower
     gnome.gnome-tweaks
     tela-icon-theme
   ];
