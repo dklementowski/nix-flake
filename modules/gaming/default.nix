@@ -19,8 +19,9 @@
   # Steam
   programs.steam = {
     enable = true;
-    # remotePlay.openFirewall = true;
-    # dedicatedServer.openFirewall = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
   };
 
   # Additional packages for games
@@ -32,6 +33,7 @@
 
     # System-wide utilities
     xboxdrv
+    gamescope
     mesa-demos
   ];
 }

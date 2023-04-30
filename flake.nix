@@ -71,9 +71,6 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = false;
-              home-manager.sharedModules = [
-                inputs.plasma-manager.homeManagerModules.plasma-manager
-              ];
               home-manager.users.${vars.userName} = {
                 home.stateVersion = vars.stateVersion;
                 imports = commonHomeManagerModules ++ [
