@@ -12,7 +12,7 @@ let
   ];
 in {
   users.users.${vars.userName}.packages = with pkgs; [
-    #vagrant
+    vagrant
     tfswitch
     packer
     ansible
