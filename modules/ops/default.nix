@@ -9,6 +9,7 @@ let
     docopt
     pydns
     pip
+    virtualenv
   ];
 in {
   users.users.${vars.userName}.packages = with pkgs; [
