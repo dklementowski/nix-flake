@@ -22,7 +22,6 @@ in {
       ripgrep
       wl-clipboard
       wget
-      curl
       git
       ncdu
       btop

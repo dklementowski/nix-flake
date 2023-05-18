@@ -25,6 +25,9 @@ in {
     awscli2
     dnsutils
     sipcalc
+    whois
+    curlHTTP3
+    nghttp3
 
     # Python for runing helper scripts like AWS SSO
     (pkgs.python3.withPackages pythonPackages)

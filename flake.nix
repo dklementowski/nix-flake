@@ -45,10 +45,6 @@
         {
           nixpkgs.config.allowUnfree = true;
 
-          nixpkgs.overlays = [
-            # ( import ./overlays/tonelib.nix )
-          ];
- 
           home.packages = [
             devenv.packages.x86_64-linux.devenv
           ];
@@ -88,6 +84,12 @@
           modules = commonModules ++ [
             ./hosts/ThiccPad
             ./modules/plasma
+
+            {
+              nixpkgs.overlays = [
+                ( import ./overlays/wpa_supplicant.nix )
+              ];
+            }
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = false;
